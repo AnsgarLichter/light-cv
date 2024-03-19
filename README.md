@@ -1,8 +1,11 @@
+![alt text](media/image.png)
+
 # CV Template in Typst
 
-This is my CV template written in Typst. You can find a two example CVs in this repository as PDFs: 
-    - [German CV](cv-de.pdf)
-    - [English CV](cv-de.typ)
+This is my CV template written in Typst. You can find a two example CVs in this repository as PDFs:
+
+- [German CV](cv-de.pdf)
+- [English CV](cv-de.typ)
 
 ## Setup
 
