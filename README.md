@@ -25,5 +25,5 @@ A big thanks to [brilliant-CV](https://github.com/mintyfrankie/brilliant-CV) as 
 
 ## Questions & Issues
 
-If you have questions, plase create a [discussion](https://github.com/AnsgarLichter/cv-typst-template/discussions).
-If you have an issue, please create an [issue](https://github.com/AnsgarLichter/cv-typst-template/issues).
+If you have questions, plase create a [discussion](https://github.com/AnsgarLichter/light-cv/discussions).
+If you have an issue, please create an [issue](https://github.com/AnsgarLichter/light-cv/issues).
