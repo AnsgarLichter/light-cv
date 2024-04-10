@@ -1,4 +1,4 @@
-#import "template.typ": *
+#import "@preview/light-cv:0.1.0": *
 #import "@preview/fontawesome:0.1.0": *
 
 #show: cv
@@ -13,8 +13,8 @@
 )
 
 #header(
-  fullName: [John Doe],
-  jobTitle: [Softwareentwickler mit Leidenschaft für JavaScript],
+  full-name: [John Doe],
+  job-title: [Softwareentwickler mit Leidenschaft für JavaScript],
   socials: (
     (
       icon: icons.github,
@@ -37,13 +37,13 @@
       link: "https://linkedin.com/"
     )
   ),
-  profilePicture: "../media/avatar.jpeg"
+  profile-picture: "../media/avatar.jpeg"
 )
 
 #section("Berufserfahrung")
 #entry(
   title: "Datenanalyst", 
-  companyOrUniversity: "BetaSoft Technologies", 
+  company-or-university: "BetaSoft Technologies", 
   date: "2023 - Heute", 
   location: "San Francisco, CA", 
   logo: "media/ucla.png",
@@ -55,7 +55,7 @@
 )
 #entry(
   title: "Cybersecurity-Berater", 
-  companyOrUniversity: "Gamma Systems Inc.", 
+  company-or-university: "Gamma Systems Inc.", 
   date: "2020 - 2022", 
   location: " London, UK", 
   logo: "media/ucla.png",
@@ -70,7 +70,7 @@
 #section("Bildung")
 #entry(
   title: "Master of Science in Informatik", 
-  companyOrUniversity: "Universität von Kalifornien", 
+  company-or-university: "Universität von Kalifornien", 
   date: "09/2020 - 09/2022", 
   location: "Los Angeles, USA", 
   logo: "media/ucla.png",
@@ -82,7 +82,7 @@
 )
 #entry(
   title: "Bachelor of Science in Informatik", 
-  companyOrUniversity: "Universität von Kalifornien", 
+  company-or-university: "Universität von Kalifornien", 
   date: "09/2017 - 09/2020", 
   location: "Los Angeles, USA", 
   logo: "media/ucla.png", 
@@ -96,7 +96,7 @@
 #section("Programmierkompetenz")
 #entry(
   title: "Chatbot für die psychische Gesundheitsunterstützung", 
-  companyOrUniversity: "Persönliches Projekt", 
+  company-or-university: "Persönliches Projekt", 
   date: "2023 - 2024", 
   location: "", 
   logo: "media/ucla.png", 
@@ -107,7 +107,7 @@
 )
 #entry(
   title: "Intelligentes Heimautomatisierungssystem", 
-  companyOrUniversity: "Persönliches Projekt", 
+  company-or-university: "Persönliches Projekt", 
   date: "2020", 
   location: "", 
   logo: "media/ucla.png", 
@@ -119,8 +119,8 @@
 
 #pagebreak()
 #header(
-  fullName: [John Doe],
-  jobTitle: [Softwareentwickler mit Leidenschaft für JavaScript],
+  full-name: [John Doe],
+  job-title: [Softwareentwickler mit Leidenschaft für JavaScript],
   socials: (
     (
       icon: icons.github,
@@ -143,7 +143,7 @@
       link: "https://linkedin.com/"
     )
   ),
-  profilePicture: "../media/avatar.jpeg"
+  profile-picture: "../media/avatar.jpeg"
 )
 
 #section("Fähigkeiten & Interessen")
