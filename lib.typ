@@ -1,6 +1,4 @@
-#import "@preview/fontawesome:0.1.0": *
-
-#import "template/settings/styles.typ": *
+#import "@preview/fontawesome:0.5.0": *
 
 #import "modules/utils.typ": *
 #import "modules/header.typ": *
@@ -9,25 +7,27 @@
 
 
 #let cv(
+  styles: (),
   content
 ) = {
   set text(
-    font: body-style.fonts,
-    weight: body-style.weight,
-    size: body-style.size,
+    font: styles.body-style.fonts,
+    weight: styles.body-style.weight,
+    size: styles.body-style.size,
   )
   set list(
-    indent: list-style.indent
+    indent: styles.list-style.indent
   )
   set align(left)
   set page(
-    paper: page-style.paper,
-    margin: page-style.margin
+    paper: styles.page-style.paper,
+    margin: styles.page-style.margin
   )
   content
 }
 
 #let header(
+  styles: (),
   full-name: [],
   job-title: [],
   // Each array item must have a property link, text and icon to be displayed.
@@ -35,13 +35,14 @@
   profile-picture: ""
 ) = {
   table(
-    columns: header-style.table.columns,
+    columns: styles.header-style.table.columns,
     inset: 0pt,
     stroke: none,
-    column-gutter: header-style.table.column-gutter,
+    column-gutter: styles.header-style.table.column-gutter,
     align: left + horizon,
     {
       create-header-info(
+        styles: styles,
         full-name: full-name,
         job-title: job-title,
         socials: socials
@@ -49,19 +50,27 @@
     },
     {
       create-header-image(
+        styles: styles,
         profile-photo: profile-picture
       )
     }
   )
-  v(header-style.margins.bottom)
+  v(styles.header-style.margins.bottom)
 }
 
-#let section(title) = {
-  v(section-style.margins.top)
-  create-section-title(title)
+#let section(
+  styles: (),
+  title: ""
+) = {
+  v(styles.section-style.margins.top)
+  create-section-title(
+    styles: styles,
+    title: title
+  )
 }
 
 #let entry(
+  styles: (),
   title: "", 
   company-or-university: "", 
   date: "", 
@@ -69,31 +78,31 @@
   logo: "", 
   description: ()
 ) = {
-  v(entry-style.margins.top)
+  v(styles.entry-style.margins.top)
   table(
-    columns: entry-style.table.columns,
+    columns: styles.entry-style.table.columns,
     inset: 0pt,
     stroke: none,
     align: horizon,
-    column-gutter: entry-style.margins.between-logo-and-title,
-    {image(logo)},
+    column-gutter: styles.entry-style.margins.between-logo-and-title,
+    {logo},
     table(
       columns: (1fr),
       inset: 0pt,
       stroke: none,
-      row-gutter: entry-style.margins.between-title-and-subtitle,
+      row-gutter: styles.entry-style.margins.between-title-and-subtitle,
       align: auto,
       {
         text(
-          size: entry-style.title.size,
-          weight: entry-style.title.weight,
-          fill: entry-style.title.color,
+          size: styles.entry-style.title.size,
+          weight: styles.entry-style.title.weight,
+          fill: styles.entry-style.title.color,
           title
         )
         text(
-          size: entry-style.company-or-university.size, 
-          weight: entry-style.company-or-university.weight, 
-          fill: entry-style.company-or-university.color, 
+          size: styles.entry-style.company-or-university.size, 
+          weight: styles.entry-style.company-or-university.weight, 
+          fill: styles.entry-style.company-or-university.color, 
           " @" + company-or-university
         )
       },
@@ -103,18 +112,18 @@
           inset: 0pt,
           stroke: none,
           align: horizon,
-          column-gutter: entry-style.margins.between-time-and-location,
+          column-gutter: styles.entry-style.margins.between-time-and-location,
           {table(
             columns: 2,
             inset: 0pt,
             stroke: none,
             align: horizon,
-            column-gutter: entry-style.margins.between-icon-and-text,
+            column-gutter: styles.entry-style.margins.between-icon-and-text,
             {if date.len() > 0{fa-hourglass-2()}},
             {text(
-              size: entry-style.time-and-location.size, 
-              weight: entry-style.time-and-location.weight, 
-              fill: entry-style.time-and-location.color, 
+              size: styles.entry-style.time-and-location.size, 
+              weight: styles.entry-style.time-and-location.weight, 
+              fill: styles.entry-style.time-and-location.color, 
               date
             )},
           )},
@@ -123,7 +132,7 @@
             inset: 0pt,
             stroke: none,
             align: horizon,
-            column-gutter: entry-style.margins.between-icon-and-text,
+            column-gutter: styles.entry-style.margins.between-icon-and-text,
             {if location.len() > 0{fa-location-dot()}},
             {text(size: 10pt, location)}
           )},
@@ -139,19 +148,23 @@
 }
 
 #let skill(
+  styles: (),
   category: "",
   skills: ()
 ) = {
   table(
-    columns: skills-style.columns,
+    columns: styles.skills-style.columns,
     inset: 0pt,
     column-gutter: 0pt,
     stroke: none,
     align: (horizon, left),
     {text(category)},
     {
-      render-skills(skills: skills)
+      render-skills(
+        styles: styles,
+        skills: skills
+      )
     }
   )
-  v(skills-style.margins.between-categories)
+  v(styles.skills-style.margins.between-categories)
 }

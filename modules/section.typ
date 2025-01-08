@@ -2,14 +2,15 @@
 #import "utils.typ": *
 
 #let create-section-title(
-  title
+  styles: (),
+  title: ""
 ) = {
   text(
-    size: section-style.title.size, 
-    weight: section-style.title.weight, 
-    fill: section-style.title.font-color,
+    size: styles.section-style.title.size, 
+    weight: styles.section-style.title.weight, 
+    fill: styles.section-style.title.font-color,
     title
   )
-  h(section-style.margins.right-to-hline)
+  h(styles.section-style.margins.right-to-hline)
   hline()
 }

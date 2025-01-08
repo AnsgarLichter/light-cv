@@ -1,18 +1,20 @@
-#import "@preview/light-cv:0.1.0": *
-#import "@preview/fontawesome:0.1.0": *
+#import "@preview/light-cv:0.2.0": *
+#import "@preview/fontawesome:0.5.0": *
+#import "settings/styles.typ": *
 
-#show: cv
+#show: cv.with(styles: styles)
 
 #let icons = (
   phone: fa-phone(),
-  homepage: fa-home(fill: colors.accent),
-  linkedin: fa-linkedin(fill: colors.accent),
-  github: fa-github(fill: colors.accent),
+  homepage: fa-home(fill: styles.colors.accent),
+  linkedin: fa-linkedin(fill: styles.colors.accent),
+  github: fa-github(fill: styles.colors.accent),
   xing: fa-xing(),
-  mail: fa-envelope(fill: colors.accent)
+  mail: fa-envelope(fill: styles.colors.accent)
 )
 
 #header(
+  styles: styles,
   full-name: [John Doe],
   job-title: [Software Engineer with a passion for JavaScript],
   socials: (
@@ -37,16 +39,20 @@
       link: "https://linkedin.com/"
     )
   ),
-  profile-picture: "../media/avatar.jpeg"
+  profile-picture: image("media/avatar.jpeg")
 )
 
-#section("Professional Experience")
+#section(
+  styles: styles,
+  title: "Professional Experience"
+)
 #entry(
+  styles: styles,
   title: "Data Analyst", 
   company-or-university: "BetaSoft Technologies", 
   date: "2023 - Today", 
   location: "San Francisco, CA", 
-  logo: "media/ucla.png",
+  logo: image("media/ucla.png"),
   description: list(
     [Analyzed large datasets using SQL and Python to extract actionable insights, leading to optimized marketing strategies and increased revenue],
     [Designed and implemented data visualization dashboards using Tableau, improving data accessibility and decision-making processes.],
@@ -54,11 +60,12 @@
   )
 )
 #entry(
+  styles: styles,
   title: "Cybersecurity Consultant", 
   company-or-university: "Gamma Systems Inc.", 
   date: "2020 - 2022", 
   location: " London, UK", 
-  logo: "media/ucla.png",
+  logo: image("media/ucla.png"),
   description: list(
     [Conducted penetration testing and vulnerability assessments for client networks, identifying and mitigating security risks],
     [Developed and implemented cybersecurity policies and procedures to ensure compliance with industry standards and regulations],
@@ -67,8 +74,12 @@
 )
 
 
-#section("Education")
+#section(
+  styles: styles,
+  title: "Education"
+)
 #entry(
+  styles: styles,
   title: "Master of Science in Computer Science", 
   company-or-university: "University of California", 
   date: "09/2020 - 09/2022", 
@@ -81,11 +92,12 @@
   )
 )
 #entry(
+  styles: styles,
   title: "Bachelor of Science in Computer Science", 
   company-or-university: "University of California", 
   date: "09/2017 - 09/2020", 
   location: "Los Angeles, USA", 
-  logo: "media/ucla.png", 
+  logo: image("media/ucla.png"), 
   description: list(
     [Thesis: Design and Implementation of a Secure File Sharing System Using Blockchain Technology],
     [Minor: Mathematics],
@@ -93,13 +105,17 @@
   )
 )
 
-#section("Programming Expertise")
+#section(
+  styles: styles,
+  title: "Programming Expertise"
+)
 #entry(
+  styles: styles,
   title: "Chatbot for Mental Health Support", 
   company-or-university: "Personal Project", 
   date: "2023 - 2024", 
   location: "", 
-  logo: "media/ucla.png", 
+  logo: image("media/ucla.png"), 
   description: list(
     [Developed a chatbot using Python and the TensorFlow library for natural language processing],
     [Implemented sentiment analysis to assess the emotional state of users during conversations],
@@ -107,11 +123,12 @@
   )
 )
 #entry(
+  styles: styles,
   title: "Smart Home Automation System", 
   company-or-university: "Personal Project", 
   date: "2020", 
   location: "", 
-  logo: "media/ucla.png", 
+  logo: image("media/ucla.png"), 
   description: list(
     [Designed a smart home automation system using Raspberry Pi and Arduino microcontrollers],
     [Implemented sensors for monitoring temperature, humidity, and motion detection within the home environment],
@@ -121,6 +138,7 @@
 
 #pagebreak()
 #header(
+  styles: styles,
   full-name: [John Doe],
   job-title: [Software Engineer with a passion for JavaScript],
   socials: (
@@ -145,23 +163,30 @@
       link: "https://linkedin.com/"
     )
   ),
-  profile-picture: "../media/avatar.jpeg"
+  profile-picture: image("media/avatar.jpeg")
 )
 
-#section("Skills & Interests")
+#section(
+  styles: styles,
+  title: "Skills & Interests"
+)
 #skill(
+  styles: styles,
   category: "Technology",
   skills: ("Cybersecurity", "Cloud Computing", "Internt of Things", "Svelte")
 )
 #skill(
+  styles: styles,
   category: "Languages",
   skills: ("English (native)", "French (fluent)", "Chinese (Basics)")
 )
 #skill(
+  styles: styles,
   category: "Sports",
   skills: ("Gym", "Baseball", "Cricekt")
 )
 #skill(
+  styles: styles,
   category: "Interests",
   skills: ("Photography", "Travel", "Music")
 )
